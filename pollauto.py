@@ -45,6 +45,7 @@ bot.run(TOKEN)
 
 from flask import Flask
 from threading import Thread
+import os
 
 app = Flask("")
 
@@ -53,8 +54,8 @@ def home():
     return "Bot is alive!"
 
 def run():
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
 
-# 啟動 Web Server 在背景執行
 t = Thread(target=run)
 t.start()
