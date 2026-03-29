@@ -1,7 +1,7 @@
 import discord
-from discord.ext import commands
-from datetime import timedelta
-import os  # 用環境變數安全存TOKEN
+from discord.ext import commands, tasks
+from datetime import time, timedelta
+import os
 
 # 讀取TOKEN
 TOKEN = os.getenv("TOKEN")
